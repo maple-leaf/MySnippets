@@ -17,21 +17,47 @@ snippet yardi
 		<div id="body-container">
 			<div id="header">
 				${5:}
-	</div>
-	<div id="main-container">
-		<div id="main">
-			????
-	</div>
-	<div id="sidebar">
-		??8
-	</div>
-	</div>
-	<div id="footer">
-		β??
-	</div>
+			</div>
+		<div id="main-container">
+			<div id="main">
+			
+			</div>
+			<div id="sidebar">
+		
+			</div>
+		</div>
+		<div id="footer">
+		
+		</div>
 	</div>
 	</body>
 	</html>
 endsnippet
 #yardi rules end
 
+# override some default html snippets
+snippet link !
+	<link rel="stylesheet" href="{1}" type="text/css" media="screen">
+endsnippet
+
+snippet script !
+	<script type="text/javascript">
+		{1}
+	</script>
+endsnippet
+
+snippet scriptsrc !
+	<script type="text/javascript" src="{1}"></script>
+endsnippet
+
+snippet normalize "Internet Explorer 6+ Mozilla Firefox 3+ Apple Safari 4+ Opera 10+ Google Chrome"
+	<link rel="stylesheet" href="https://raw.github.com/necolas/normalize.css/v1/normalize.css" type="text/css" media="screen" >
+endsnippet
+
+snippet normalize "Internet Explorer 8+ Mozilla Firefox 4+ Apple Safari 5+ Opera 12+ Google Chrome"
+	<link rel="stylesheet" href="https://raw.github.com/necolas/normalize.css/master/normalize.css" type="text/css" media="screen" >
+endsnippet
+
+snippet html5shiv "fix legacy IE support on html5"
+	<script src="https://raw.github.com/aFarkas/html5shiv/master/src/html5shiv.js"></script>
+endsnippet
