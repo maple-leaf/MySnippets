@@ -37,27 +37,29 @@ endsnippet
 
 # override some default html snippets
 snippet link "override link" !
-	<link rel="stylesheet" href="${1:}" type="text/css" media="screen">
+<link rel="stylesheet" href="${1:}" type="text/css" media="screen">
 endsnippet
 
 snippet script "override script" !
-	<script type="text/javascript">
-		${1:}
-	</script>
+<script type="text/javascript">
+${1:}
+</script>
 endsnippet
 
 snippet scriptsrc "override scriptsrc" !
-	<script type="text/javascript" src="${1:}"></script>
+<script type="text/javascript" src="${1:}"></script>
 endsnippet
 
 snippet normalize "Internet Explorer 6+ Mozilla Firefox 3+ Apple Safari 4+ Opera 10+ Google Chrome , minimal version by adding min"
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.css" type="text/css" media="screen" >
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.css" type="text/css" media="screen" >
 endsnippet
 
 snippet normalize "Internet Explorer 8+ Mozilla Firefox 4+ Apple Safari 5+ Opera 12+ Google Chrome, minimal version by adding min"
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.0/normalize.css" type="text/css" media="screen" >
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.0/normalize.css" type="text/css" media="screen" >
 endsnippet
 
 snippet html5shiv "fix legacy IE support on html5"
-	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 endsnippet
