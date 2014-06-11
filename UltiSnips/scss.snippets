@@ -1,1 +1,144 @@
-extends css
+snippet mixin:clearfix "clearfix($ie7<B>)"
+@mixin clearfix($ie7: false) {
+    .clearfix:before,.clearfix:after {
+        content: " ";
+        display: table;
+    }
+    .clearfix:after {
+        clear: both;
+    }
+    @if $ie7 {
+        .clearfix {*zoom: 1;}
+    }
+}
+endsnippet
+
+snippet mixin:grid "grid($wrapper<S>, $marginLeft, $ie7<B>"
+@mixin grid($wrapper: '.grid', $marginLeft: 0, $ie7: false) {
+    #{$wrapper} {
+        @if $marginLeft != 0 {
+            margin-left: -$marginLeft;
+        }
+        @if $ie7 {
+            *zoom: 1;
+        }
+        &:before, &:after {
+            content: " ";
+            display: table;
+        }
+        &:after {
+            clear: both;
+        }
+        .item {
+            float: left;
+            @if $marginLeft != 0 {
+                margin-left: $marginLeft;
+            }
+        }
+    }
+}
+endsnippet
+
+snippet mixin:table-grid "table-grid($wrapper<S>)"
+@mixin table-grid($wrapper: '.table-grid') {
+    #{$wrapper} {
+        display: table;
+        width: 100%;
+        .item {
+            display: table-cell;
+        }
+    }
+}
+endsnippet
+
+snippet mixin:triangle "triangle($direction<S>, $wrapper<S>, $borderWidth, $borderColor, $width, $height)"
+@mixin triangle($direction: 'top', $wrapper: '.triangle', $borderWidth: 10px, $borderColor: goldenrod, $width: 100px, $height: 50px) {
+    #{$wrapper} {
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            border: 10px solid transparent;
+            @if $direction == 'top' {
+                left: ($width - $borderWidth) / 2;
+                top: -2 * $borderWidth;
+                border-bottom-color: $borderColor;
+            }
+            @if $direction == 'bottom' {
+                left: ($width - $borderWidth) / 2;
+                bottom: -2 * $borderWidth;
+                border-top-color: $borderColor;
+            }
+            @if $direction == 'left' {
+                left: -2 * $borderWidth;
+                top: ($height - $borderWidth) / 2;
+                border-right-color: $borderColor;
+            }
+            @if $direction == 'right' {
+                right: -2 * $borderWidth;
+                top: ($height - $borderWidth) / 2;
+                border-bottom-color: $borderColor;
+            }
+        }
+    }
+}
+endsnippet
+
+snippet mixin:caret "caret($direction<S>, $wrapper<S>, $borderWidth, $borderColor, $background, $width, $height)"
+@mixin caret($direction: 'top', $wrapper: '.caret', $borderWidth: 10px, $borderColor: goldenrod, $background: #eee, $width: 100px, $height: 50px) {
+    #{$wrapper} {
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            border: 10px solid transparent;
+            @if $direction == 'top' {
+                left: ($width - 2 * $borderWidth) / 2;
+                top: -2 * $borderWidth;
+                border-bottom-color: $background;
+            }
+            @if $direction == 'bottom' {
+                left: ($width - 2 * $borderWidth) / 2;
+                bottom: -2 * $borderWidth;
+                border-top-color: $background;
+            }
+            @if $direction == 'left' {
+                left: -2 * $borderWidth;
+                top: ($height - 2 * $borderWidth) / 2;
+                border-right-color: $background;
+            }
+            @if $direction == 'right' {
+                right: -2 * $borderWidth;
+                top: ($height - 2 * $borderWidth) / 2;
+                border-bottom-color: $borderColor;
+            }
+        }
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            border: $borderWidth solid transparent;
+            @if $direction == 'top' {
+                left: ($width - 2 * $borderWidth) / 2;
+                top: -2 * $borderWidth + 1;
+                border-bottom-color: $background;
+            }
+            @if $direction == 'bottom' {
+                left: ($width - 2 * $borderWidth) / 2;
+                bottom: -2 * $borderWidth + 1;
+                border-top-color: $background;
+            }
+            @if $direction == 'left' {
+                left: -2 * $borderWidth + 1;
+                top: ($height - 2 * $borderWidth) / 2;
+                border-right-color: $background;
+            }
+            @if $direction == 'right' {
+                right: -2 * $borderWidth + 1;
+                top: ($height - 2 * $borderWidth) / 2;
+                border-bottom-color: $background;
+            }
+        }
+    }
+}
+endsnippet
