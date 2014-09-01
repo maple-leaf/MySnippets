@@ -271,12 +271,20 @@ snippet td:n "text-decoration: overline(css2)"
 text-decoration: overline;$0
 endsnippet
 
-snippet td "text-decoration：[ text-decoration-line ] || [ text-decoration-style ] || [ text-decoration-color ]"
+snippet td "text-decoration(css2)"
+text-decoration: ${1:none};$0
+endsnippet
+
+snippet td3 "text-decoration：[ text-decoration-line ] || [ text-decoration-style ] || [ text-decoration-color ]"
 text-decoration: ${1:#f00} ${2:dotted} ${3:underline};
 endsnippet
 
 snippet ti "text-indent: length"
 text-indent: ${1:-9999}px;$0
+endsnippet
+
+snippet to "text-overflow"
+text-overflow: ${1:ellipsis};$0
 endsnippet
 
 snippet ts "text-shadow: offsetX offsetY length color"
