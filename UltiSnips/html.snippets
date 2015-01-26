@@ -1,10 +1,12 @@
-# jquery 1.9 from googleapi cdn
-snippet gj1.9
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+# jquery cdn
+snippet jq1
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1.11.2/jquery.min.js"></script>
+endsnippet
+snippet jq2
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
 endsnippet
 
-#this is yardi company's rules
-snippet yardi
+snippet html
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 	<html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -16,7 +18,7 @@ snippet yardi
 	<body>
 		<div id="body-container">
 			<div id="header">
-				${5:}
+				${0:}
 			</div>
 		<div id="main-container">
 			<div id="main">
@@ -27,13 +29,35 @@ snippet yardi
 			</div>
 		</div>
 		<div id="footer">
-		
 		</div>
 	</div>
 	</body>
 	</html>
 endsnippet
-#yardi rules end
+
+snippet html5
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>${1:Title}</title>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/normalize/3.0.2/normalize.min.css">
+        <link href="css/main.css" rel="stylesheet" type="text/css" media="all">
+        <!--[if lt IE 9]>
+        <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <header>${0:}</header>
+        <div id="main"></div>
+        <footer></footer>
+    </body>
+</html>
+endsnippet
+
+snippet viewport
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+endsnippet
 
 # override some default html snippets
 snippet link "override link" !
